@@ -7,3 +7,5 @@ pour un veritable client.
 HTML / PHP / JS / SQL
 
 En MVC.
+
+Utilisation de #### pour des régles de confidentialité.
