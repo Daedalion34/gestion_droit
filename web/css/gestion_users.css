@@ -1,0 +1,123 @@
+/*-----------------------------tableau-----------------------------*/
+
+.gu_recap_usager {
+  clear: both;
+  border: solid 1px;
+  border-radius: 5px;
+  border-color: #597eaa;
+}
+
+table thead tr td {
+  background-color: #597eaa;
+  color: white;
+  font-weight: bold;
+}
+
+table tr td {
+  padding: 15px;
+  background-color: #d0dae8;
+}
+
+#gu_desactiver td {
+  background-color: #D5D5D5;
+  color: #818183;
+}
+
+/*-----------------------------boutton-----------------------------*/
+
+button {
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Roboto', Verdana, sans-serif, Arial;
+  font-size: 15px;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+button:hover {
+  transition-duration: 1s;
+}
+
+#gu_generer {
+  border: 3px solid #ef9c28;
+  background-color: #ef9c28;
+  color: #ffffff;
+  margin-top: 20px
+}
+
+#gu_generer:hover {
+  background-color: #ffffff;
+  color: #ef9c28;
+}
+
+.gu_red {
+  background-color: #ff0000;
+  border: 3px solid #ff0000;
+  color: #ffffff;
+}
+
+.gu_red:hover {
+  background-color: #ffffff;
+  color: #ff0000;
+}
+
+.gu_green {
+  background-color: #4faa27;
+  border: 3px solid #4faa27;
+  color: #ffffff;
+}
+
+.gu_green:hover {
+  background-color: #ffffff;
+  color: #4faa27;
+}
+
+.gu_blue {
+  background-color: #597eaa;
+  border: 3px solid #597eaa;
+  color: #ffffff;
+}
+
+.gu_blue:hover {
+  background-color: #ffffff;
+  color: #597eaa;
+}
+
+/*-----------------------------les champs de texte (input)-----------------------------*/
+
+input {
+  border-radius: 5px;
+  border: solid 2px #d0dae8;
+  font-family: 'Roboto', Verdana, sans-serif, Arial;
+  font-size: 14px;
+  padding: 1px 0 2px 30px;
+}
+
+#gu_id_utilisateur, #gu_actif {
+  visibility: hidden;
+}
+
+/*-----------------------------placement des div-----------------------------*/
+
+#gu_formulaire {
+  float: left;
+  width: 49%;
+  display: inline;
+}
+
+#gu_droit {
+  float: right;
+  width: 48%;
+  display: inline-block;
+}
+
+fieldset {
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+#gu_button {
+  margin-top: 10px;
+  display: inline-block;
+  width: 97%;
+}

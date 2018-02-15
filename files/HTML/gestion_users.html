@@ -1,0 +1,135 @@
+<link rel="stylesheet" type="text/css" href="css/gestion_users.css">
+<script src="js/gestion_users.js?4"></script>
+<meta charset="UTF-8">
+<script type="text/javascript">
+
+var arights_defaults = [];
+var arights_real = [];
+var aOfRecapUsager = [];
+    <?php
+    $i = 0;
+    // création d'un tableau: les droits par defauts
+    while ($ligne_droit_defaut = mysqli_fetch_array($datas["####"]["####"])) {
+            echo "arights_defaults[" . $i . "]= [];\n";
+            echo "arights_defaults[" . $i . "][\"####\"] = \"" . $ligne_droit_defaut["####"] . "\";\n";
+            echo "arights_defaults[" . $i . "][\"####\"] = \"" . $ligne_droit_defaut["####"] . "\";\n";
+            echo "arights_defaults[" . $i . "][\"####\"] = \"" . $ligne_droit_defaut["####"] . "\";\n";
+            $i++;
+    }
+    $i = 0;
+    // création d'un tableau: les droits reels
+    while ($ligne_droit_reel = mysqli_fetch_array($datas["####"]["####"])) {
+            echo "arights_real[" . $i . "]= [];\n";
+            echo "arights_real[" . $i . "][\"####\"] = \"" . $ligne_droit_reel["####"] . "\";\n";
+            echo "arights_real[" . $i . "][\"####\"] = \"" . $ligne_droit_reel["####"] . "\";\n";
+            echo "arights_real[" . $i . "][\"####\"] = \"" . $ligne_droit_reel["####"] . "\";\n";
+            $i++;
+    }
+    $i = 0;
+    $id_utilisateur_current= 0;
+    // création d'un tableau: les informations de tout les utilisateurs
+    while ($ligne_uti = mysqli_fetch_array($datas["####"]["####"])) {
+        if (($id_utilisateur_current == 0) || ($id_utilisateur_current != $ligne_uti["####"]))   {
+            echo "aOfRecapUsager[" . $i . "]= [];\n";
+            echo "aOfRecapUsager[" . $i . "][\"####\"] = \"" . $ligne_uti["####"] . "\";\n";
+            echo "aOfRecapUsager[" . $i . "][\"####\"] = \"" . $ligne_uti["####"] . "\";\n";
+            echo "aOfRecapUsager[" . $i . "][\"####\"] = \"" . $ligne_uti["####"] . "\";\n";
+            echo "aOfRecapUsager[" . $i . "][\"####\"] = \"" . $ligne_uti["####"] . "\";\n";
+            echo "aOfRecapUsager[" . $i . "][\"####\"] = \"" . $ligne_uti["####"] . "\";\n";
+            echo "aOfRecapUsager[" . $i . "][\"####\"] = \"" . $ligne_uti["####"] . "\";\n";
+            echo "aOfRecapUsager[" . $i . "][\"####\"] = \"" . $ligne_uti["####"] . "\";\n";
+            echo "aOfRecapUsager[" . $i . "][\"####\"] = \"" . $ligne_uti["####"] . "\";\n";
+            echo "aOfRecapUsager[" . $i . "][\"####\"] = \"" . $ligne_uti["####"] . "\";\n";
+            $i++;
+        }
+    }
+    ?>
+</script>
+
+<div id="gu_tableau">
+    <!-- mon tableau est la -->
+</div>
+
+<form action="#" method="post" id="gu_test1">
+    <div class="gu_gestion" id="gu_container">
+        <div id="gu_formulaire">
+            <form action="#" method= "post"  id="gu_test1">
+            <input type="hidden" name="page" value="gestion_users">
+                <fieldset id="field_renseignement">
+
+                <legend>####</legend>
+                <p>
+                    <input type="text" name="####" id="####" size="30" />
+                    <input type="text" name="gu_actif" id="gu_actif" size="30" />
+                    <!-- cette input est caché dans le css -->
+                </p>
+                <p>
+                    <label for="####">####:</label>
+                    <input type="text" name="####" id="####" size="30" />
+                </p>
+                <p>
+                    <label for="####">####:</label>
+                    <input type="text" name="####" id="####" size="30" />
+                </p>
+                <p>
+                    <label for="####">####:</label>
+                    <input type="text" name="####" id="####" size="30" />
+                </p>
+                <p>
+                    <label for="####">####:</label>
+                    <input type="text" name="####" id="####" size="30" />
+                </p>
+
+                <br/>
+                <p>
+                    <label>####:</label>
+                    <select name="gu_sl_groupe" id="gu_sl_groupe" class="gu_groupe">
+                        <option value="">####</option>
+                        <?php while ($data = mysqli_fetch_array($datas['####']['####'])) { ?>
+                		<option value="<?= $data['####']; ?>";><?= $data['####']; ?>
+                        <?php } ?>
+                    </select>
+
+                </p><br/>
+                <p>
+                    <label for="####">####</label>
+                    <input type="text" name="####" id="####" size="30" />
+                </p>
+                <p class="gu_modHidden">
+                    <label>####: </label><input name="####" id="####" type="password" />
+                    </br>
+                    </br>
+                    <label>####: </label><input name="####" id="####" type="password" />
+                    <div id="gu_message_psw"></div>
+                    </br>
+                </p>
+            </fieldset>
+        </div>
+
+        <div id="gu_droit">
+            <fieldset class="gu_userRights">
+                <legend>####</legend>
+
+                <?php while ($data = mysqli_fetch_array($datas['####']['####'])) { ?>
+                <p>
+                    <input type="checkbox" name="gu_chk_interface<?= $data['####']?>" id="####<?= $data['####']?>" value="<?php echo $data['####'] ?>" onChange="gu_showAcces(this, <?php echo $data['####'] ?>)" onClick="gu_showAcces(this, <?php echo $data['####'] ?>)">
+                    <?= $data['####'] ?>
+                        <select name="gu_sel_interface<?php echo $data['####'] ?>" id="gu_sel_interface<?php echo $data['####'] ?>" style="display:none">
+                            <option value="3">Non visible
+                            <option value="1">Accès Total
+                            <option value="2">Lecture seule
+                        </select>
+                </p>
+                <?php } ?>
+            </fieldset>
+        </div>
+        <div id="gu_button">
+            <button type="submit" name="form_valid" id="form_valid" class="gu_green">Valider la Création</button>
+            <input type="hidden" name="gu_todo" id="gu_todo" value="ADD">
+            <button type="button"  class="gu_red" onclick="javascript:location.href='main.php?page=accueil'">Quitter sans Sauvegarder</button>
+        </div>
+        <div id="retour">
+
+        </div>
+    </div>
+</form>
